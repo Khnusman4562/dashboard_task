@@ -87,55 +87,59 @@ export default function DataInsightsTable({ data }) {
             <p className="text-[13px] font-medium text-gray-400 mt-1">Recent file activity and processing statuses</p>
           </div>
           
-          <div className="flex flex-wrap items-center gap-3">
-            {/* Source Dropdown */}
-            <select
-              value={sourceFilter}
-              onChange={(e) => { setSourceFilter(e.target.value); setCurrentPage(1); }}
-              className={`${selectClass} flex-1 sm:flex-none`}
-            >
-              {sources.map(s => <option key={s} value={s} className="font-semibold text-gray-600 py-2">{s === "All" ? "All Sources" : s}</option>)}
-            </select>
+          <div className="grid grid-cols-1 sm:flex sm:flex-wrap items-center gap-3 w-full xl:w-auto">
+            <div className="grid grid-cols-2 sm:flex gap-3">
+              {/* Source Dropdown */}
+              <select
+                value={sourceFilter}
+                onChange={(e) => { setSourceFilter(e.target.value); setCurrentPage(1); }}
+                className={`${selectClass} w-full sm:w-auto`}
+              >
+                {sources.map(s => <option key={s} value={s}>{s === "All" ? "All Sources" : s}</option>)}
+              </select>
 
-            {/* Sort Dropdown */}
-            <select
-              value={sortBy}
-              onChange={(e) => { setSortBy(e.target.value); setCurrentPage(1); }}
-              className={`${selectClass} flex-1 sm:flex-none`}
-            >
-              <option value="newest" className="font-semibold text-gray-600">Sort: Default</option>
-              <option value="amount-high" className="font-semibold text-gray-600">Amount: High to Low</option>
-              <option value="amount-low" className="font-semibold text-gray-600">Amount: Low to High</option>
-              <option value="utr" className="font-semibold text-gray-600">Sort by UTR</option>
-            </select>
+              {/* Sort Dropdown */}
+              <select
+                value={sortBy}
+                onChange={(e) => { setSortBy(e.target.value); setCurrentPage(1); }}
+                className={`${selectClass} w-full sm:w-auto`}
+              >
+                <option value="newest">Sort: Default</option>
+                <option value="amount-high">Amount: High to Low</option>
+                <option value="amount-low">Amount: Low to High</option>
+                <option value="utr">Sort by UTR</option>
+              </select>
+            </div>
 
-            <div className="relative flex-1 sm:flex-none">
+            <div className="relative w-full sm:w-44">
               <input
                 type="text"
                 placeholder="Search UTR..."
                 value={filterText}
                 onChange={(e) => { setFilterText(e.target.value); setCurrentPage(1); }}
-                className="pl-4 pr-4 py-2.5 text-[13px] bg-gray-50 border-none rounded-xl w-full sm:w-44 font-bold text-gray-600 placeholder:text-gray-400 placeholder:font-medium focus:ring-2 focus:ring-indigo-100 outline-none hover:bg-gray-100 transition-all"
+                className="pl-4 pr-4 py-2.5 text-[13px] bg-gray-50 border-none rounded-xl w-full font-bold text-gray-600 placeholder:text-gray-400 placeholder:font-medium focus:ring-2 focus:ring-indigo-100 outline-none hover:bg-gray-100 transition-all"
               />
             </div>
 
-            <button 
-              onClick={handleClear}
-              className="px-4 py-2 rounded-xl text-[13px] font-bold text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-all"
-            >
-              Clear
-            </button>
+            <div className="flex items-center gap-3 w-full sm:w-auto">
+              <button 
+                onClick={handleClear}
+                className="px-4 py-2 rounded-xl text-[13px] font-bold text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-all flex-1 sm:flex-none"
+              >
+                Clear
+              </button>
 
-            <button 
-              onClick={handleExport}
-              disabled={filteredAndSorted.length === 0}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#C3C6D7] text-[13px] font-semibold text-[#2B2B2B] hover:bg-[#F8F9FC] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed ml-auto sm:ml-0"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3" />
-              </svg>
-              <span>Export</span>
-            </button>
+              <button 
+                onClick={handleExport}
+                disabled={filteredAndSorted.length === 0}
+                className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-white border border-[#C3C6D7] text-[13px] font-semibold text-[#2B2B2B] hover:bg-[#F8F9FC] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed flex-1 sm:flex-none"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3" />
+                </svg>
+                <span>Export</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
