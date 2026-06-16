@@ -4,7 +4,7 @@ import UploadDropzone from "./UploadDropzone";
 
 export default function DataImportHub({ primaryFile, secondaryFile, onPrimarySelect, onSecondarySelect, onCompare }) {
   return (
-    <div className="bg-white rounded-[28px] p-6 h-full flex flex-col shadow-sm border border-gray-50">
+    <div className="bg-white rounded-[28px] p-4 md:p-6 h-full flex flex-col shadow-sm border border-gray-50">
       {/* Header - Responsive Layout */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
         <div className="flex items-center gap-2.5">

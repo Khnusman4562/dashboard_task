@@ -80,7 +80,7 @@ export default function DataInsightsTable({ data }) {
   return (
     <div className="bg-white rounded-[28px] shadow-sm border border-gray-50 overflow-hidden">
       {/* Table Header */}
-      <div className="px-4 md:px-8 py-6 border-b border-gray-100">
+      <div className="px-3 md:px-8 py-4 md:py-6 border-b border-gray-100">
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6">
           <div>
             <h2 className="text-lg font-bold text-gray-900 leading-tight">Data Insights</h2>
@@ -190,7 +190,7 @@ export default function DataInsightsTable({ data }) {
       </div>
 
       {/* Footer */}
-      <div className="px-6 md:px-8 py-5 border-t border-gray-100 flex items-center justify-between bg-gray-50/30">
+      <div className="px-3 md:px-8 py-4 md:py-5 border-t border-gray-100 flex items-center justify-end sm:justify-between bg-gray-50/30">
         <span className="hidden sm:block text-[13px] font-medium text-gray-400 tracking-tight">
           Showing {paginated.length} out of {filteredAndSorted.length} results
         </span>

@@ -2,7 +2,7 @@ import DonutChart from "@/components/ui/DonutChart";
 
 export default function AssetDistribution({ total, processed, pending }) {
   return (
-    <div className="bg-white rounded-[28px] p-6 shadow-sm border border-gray-50 flex flex-col h-full ">
+    <div className="bg-white rounded-[28px] p-4 md:p-6 shadow-sm border border-gray-50 flex flex-col h-full ">
       {/* Header - Centered */}
       <div className="flex  items-center gap-2.5 mb-6">
         <div className="p-2">
