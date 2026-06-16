@@ -60,15 +60,13 @@ export default function UploadDropzone({ label, subtitle, icon = "upload", onFil
       {/* Bottom Content: Full-width Button */}
       <button
         onClick={() => inputRef.current?.click()}
-        className={`w-full py-2.5 rounded-xl text-[11px] font-bold transition-all ${
+        className={`w-full py-2.5 rounded-xl text-[13px] font-bold transition-all ${
           file
-            ? "bg-indigo-600 text-white shadow-md shadow-indigo-100"
-            : variant === "secondary"
-              ? "bg-blue-50 text-blue-600 hover:bg-blue-100"
-              : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50"
+            ? "bg-white border border-gray-900 text-gray-900 hover:bg-gray-50 shadow-sm"
+            : "bg-blue-50 text-blue-600 hover:bg-blue-100"
         }`}
       >
-        {file ? "Replace File" : (variant === "secondary" ? "Select File" : "Replace File")}
+        {file ? "Replace File" : "Select File"}
       </button>
     </div>
   );
