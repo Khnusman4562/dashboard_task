@@ -5,15 +5,15 @@ import UploadDropzone from "./UploadDropzone";
 export default function DataImportHub({ primaryFile, secondaryFile, onPrimarySelect, onSecondarySelect, onCompare }) {
   return (
     <div className="bg-white rounded-[28px] p-6 h-full flex flex-col shadow-sm border border-gray-50">
-      {/* Header - Centered Layout */}
-      <div className="flex  items-center justify-between mb-6 relative">
+      {/* Header - Responsive Layout */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
         <div className="flex items-center gap-2.5">
           <div className="p-2 bg-indigo-50 rounded-lg">
             <img src="/file_icon.svg" alt="Data Import Hub" className="w-4 h-4" />
           </div>
           <h2 className="text-base font-bold text-gray-900 tracking-tight">Data Import Hub</h2>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <button 
             onClick={onCompare}
             disabled={!primaryFile || !secondaryFile}
@@ -27,8 +27,8 @@ export default function DataImportHub({ primaryFile, secondaryFile, onPrimarySel
         </div>
       </div>
 
-      {/* Dropzones */}
-      <div className="flex gap-4 flex-1">
+      {/* Dropzones - Stacked on mobile */}
+      <div className="flex flex-col md:flex-row gap-4 flex-1">
         <UploadDropzone
           label="Primary Dataset"
           subtitle="Upload .csv/.xlsx"

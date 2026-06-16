@@ -14,14 +14,14 @@ export default function Navbar() {
 
   return (
     <header className="w-full bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm/5">
-      <div className="max-w-[1800px] mx-auto px-8">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Brand/Logo Section */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4 md:gap-8">
             <div className="flex items-center gap-2.5">
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-[#004AC6] leading-none tracking-tight">DataCentral</span>
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-0.5">Enterprise Analytics</span>
+                <span className="text-base md:text-lg font-bold text-[#004AC6] leading-none tracking-tight">DataCentral</span>
+                <span className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-0.5">Enterprise Analytics</span>
               </div>
             </div>
 
@@ -62,7 +62,7 @@ export default function Navbar() {
             {/* Notifications */}
             <div className="flex items-center border-l border-gray-100 pl-4 ml-2">
               <button className="relative p-1.5 text-gray-400 hover:text-gray-600 transition-colors">
-                <img src="/bell_Icon.svg" alt="Notifications" className="w-5 h-5" />
+                <img src="/bell_icon.svg" alt="Notifications" className="w-5 h-5" />
                 <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-indigo-500 border border-white rounded-full"></span>
               </button>
             </div>
@@ -72,7 +72,7 @@ export default function Navbar() {
               
               <div className="w-9 h-9 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden shadow-sm">
                 <img 
-                  src="/profile.png" 
+                  src="/profile_icon.svg" 
                   alt="Alex Rivera" 
                   className="w-full h-full object-cover"
                 />

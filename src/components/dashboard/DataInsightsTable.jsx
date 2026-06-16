@@ -80,8 +80,8 @@ export default function DataInsightsTable({ data }) {
   return (
     <div className="bg-white rounded-[28px] shadow-sm border border-gray-50 overflow-hidden">
       {/* Table Header */}
-      <div className="px-8 py-6 border-b border-gray-100">
-        <div className="flex flex-wrap items-center justify-between gap-4">
+      <div className="px-4 md:px-8 py-6 border-b border-gray-100">
+        <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6">
           <div>
             <h2 className="text-lg font-bold text-gray-900 leading-tight">Data Insights</h2>
             <p className="text-[13px] font-medium text-gray-400 mt-1">Recent file activity and processing statuses</p>
@@ -92,7 +92,7 @@ export default function DataInsightsTable({ data }) {
             <select
               value={sourceFilter}
               onChange={(e) => { setSourceFilter(e.target.value); setCurrentPage(1); }}
-              className={selectClass}
+              className={`${selectClass} flex-1 sm:flex-none`}
             >
               {sources.map(s => <option key={s} value={s} className="font-semibold text-gray-600 py-2">{s === "All" ? "All Sources" : s}</option>)}
             </select>
@@ -101,7 +101,7 @@ export default function DataInsightsTable({ data }) {
             <select
               value={sortBy}
               onChange={(e) => { setSortBy(e.target.value); setCurrentPage(1); }}
-              className={selectClass}
+              className={`${selectClass} flex-1 sm:flex-none`}
             >
               <option value="newest" className="font-semibold text-gray-600">Sort: Default</option>
               <option value="amount-high" className="font-semibold text-gray-600">Amount: High to Low</option>
@@ -109,13 +109,13 @@ export default function DataInsightsTable({ data }) {
               <option value="utr" className="font-semibold text-gray-600">Sort by UTR</option>
             </select>
 
-            <div className="relative">
+            <div className="relative flex-1 sm:flex-none">
               <input
                 type="text"
                 placeholder="Search UTR..."
                 value={filterText}
                 onChange={(e) => { setFilterText(e.target.value); setCurrentPage(1); }}
-                className="pl-4 pr-4 py-2.5 text-[13px] bg-gray-50 border-none rounded-xl w-44 font-bold text-gray-600 placeholder:text-gray-400 placeholder:font-medium focus:ring-2 focus:ring-indigo-100 outline-none hover:bg-gray-100 transition-all"
+                className="pl-4 pr-4 py-2.5 text-[13px] bg-gray-50 border-none rounded-xl w-full sm:w-44 font-bold text-gray-600 placeholder:text-gray-400 placeholder:font-medium focus:ring-2 focus:ring-indigo-100 outline-none hover:bg-gray-100 transition-all"
               />
             </div>
 
@@ -129,7 +129,7 @@ export default function DataInsightsTable({ data }) {
             <button 
               onClick={handleExport}
               disabled={filteredAndSorted.length === 0}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#C3C6D7] text-[13px] font-semibold text-[#2B2B2B] hover:bg-[#F8F9FC] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#C3C6D7] text-[13px] font-semibold text-[#2B2B2B] hover:bg-[#F8F9FC] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed ml-auto sm:ml-0"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3" />
@@ -190,8 +190,8 @@ export default function DataInsightsTable({ data }) {
       </div>
 
       {/* Footer */}
-      <div className="px-8 py-5 border-t border-gray-100 flex items-center justify-between bg-gray-50/30">
-        <span className="text-[13px] font-medium text-gray-400 tracking-tight">
+      <div className="px-6 md:px-8 py-5 border-t border-gray-100 flex items-center justify-between bg-gray-50/30">
+        <span className="hidden sm:block text-[13px] font-medium text-gray-400 tracking-tight">
           Showing {paginated.length} out of {filteredAndSorted.length} results
         </span>
         <Pagination

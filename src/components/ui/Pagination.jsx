@@ -26,25 +26,25 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
   const pages = getPageNumbers();
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-1.5 md:gap-2">
       {/* Previous Button */}
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="w-8 h-8 rounded-full border border-[#D9D9E8] bg-white flex items-center justify-center hover:bg-[#F8F9FC] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+        className="w-7 h-7 md:w-8 md:h-8 rounded-full border border-[#D9D9E8] bg-white flex items-center justify-center hover:bg-[#F8F9FC] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
       >
-        <svg className="w-4 h-4 text-[#8E93A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#8E93A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
       {/* Page Numbers - Fixed 3 numbers */}
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-1 md:gap-1.5">
         {pages.map((page) => (
           <button
             key={page}
             onClick={() => onPageChange(page)}
-            className={`transition-all duration-200 flex items-center justify-center w-8 h-8 rounded-full text-[13px] ${
+            className={`transition-all duration-200 flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full text-[12px] md:text-[13px] ${
               currentPage === page
                 ? "bg-[#4B16FF] text-white font-bold"
                 : "font-semibold text-[#3F4659] hover:bg-gray-50"
@@ -59,9 +59,9 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="w-8 h-8 rounded-full border border-[#D9D9E8] bg-white flex items-center justify-center hover:bg-[#F8F9FC] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+        className="w-7 h-7 md:w-8 md:h-8 rounded-full border border-[#D9D9E8] bg-white flex items-center justify-center hover:bg-[#F8F9FC] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
       >
-        <svg className="w-4 h-4 text-[#8E93A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#8E93A8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
         </svg>
       </button>
