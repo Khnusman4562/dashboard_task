@@ -75,6 +75,8 @@ export default function useUpload() {
   const processFiles = useCallback(async (primary, secondary) => {
     if (!primary || !secondary) return;
     setLoading(true);
+    setStats({ total: 0, processed: 0, pending: 0 }); // Reset stats
+    
     try {
       const [primaryData, secondaryData] = await Promise.all([
         parseFile(primary),
@@ -82,11 +84,31 @@ export default function useUpload() {
       ]);
 
       const { onlyInPrimary, onlyInSecondary, matchedCount } = matchRecords(primaryData, secondaryData);
+      
+      const finalTotal = primaryData.length + onlyInSecondary.length;
+      const finalProcessed = matchedCount;
+      const finalPending = onlyInPrimary.length + onlyInSecondary.length;
 
+      // Simulated real-time filling
+      setStats({ total: finalTotal, processed: 0, pending: finalTotal });
+      
+      const steps = 20;
+      const interval = 50; // ms
+      
+      for (let i = 1; i <= steps; i++) {
+        await new Promise(r => setTimeout(r, interval));
+        setStats(prev => ({
+          ...prev,
+          processed: Math.floor((finalProcessed / steps) * i),
+          pending: finalTotal - Math.floor((finalProcessed / steps) * i)
+        }));
+      }
+
+      // Ensure final values are exact
       setStats({
-        total: primaryData.length + onlyInSecondary.length,
-        processed: matchedCount,
-        pending: onlyInPrimary.length + onlyInSecondary.length,
+        total: finalTotal,
+        processed: finalProcessed,
+        pending: finalPending,
       });
 
       const getAmount = (r) => {

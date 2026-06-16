@@ -1,16 +1,15 @@
 "use client";
 
 export default function DonutChart({ total, processed, pending }) {
-  const radius = 60; // Slightly smaller
-  const stroke = 18; // Thicker ring
+  const radius = 60; 
+  const stroke = 18; 
   const normalizedR = radius - stroke / 2;
   const circumference = 2 * Math.PI * normalizedR;
   
-  // Safety check for total being 0 or NaN
   const safeTotal = total > 0 ? total : 0;
   const processedPct = safeTotal > 0 ? (processed / safeTotal) : 0;
   const processedDash = processedPct * circumference;
-  const gap = safeTotal > 0 ? 2.5 : 0;
+  const gap = safeTotal > 0 && processedPct > 0 && processedPct < 1 ? 2.5 : 0;
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -27,20 +26,22 @@ export default function DonutChart({ total, processed, pending }) {
           <circle
             cx="60" cy="60" r={normalizedR}
             fill="none"
-            stroke="#c0392b"
+            stroke="#943700"
             strokeWidth={stroke}
-            strokeDasharray={safeTotal > 0 ? `${circumference - processedDash - gap} ${processedDash + gap}` : "0 1000"}
+            strokeDasharray={safeTotal > 0 ? `${Math.max(0, circumference - processedDash - gap)} ${circumference}` : "0 1000"}
             strokeDashoffset={safeTotal > 0 ? (-(processedDash + gap / 2)) : 0}
             strokeLinecap="round"
+            style={{ transition: 'stroke-dasharray 0.5s ease-out, stroke-dashoffset 0.5s ease-out' }}
           />
           {/* Processed arc */}
           <circle
             cx="60" cy="60" r={normalizedR}
             fill="none"
-            stroke="#7b2d26"
+            stroke="#4F46E5"
             strokeWidth={stroke}
-            strokeDasharray={safeTotal > 0 ? `${processedDash - gap / 2} ${circumference - processedDash + gap / 2}` : "0 1000"}
+            strokeDasharray={safeTotal > 0 ? `${Math.max(0, processedDash - gap / 2)} ${circumference}` : "0 1000"}
             strokeLinecap="round"
+            style={{ transition: 'stroke-dasharray 0.5s ease-out' }}
           />
         </svg>
         {/* Center text */}
