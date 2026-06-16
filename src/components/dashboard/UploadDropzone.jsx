@@ -41,13 +41,9 @@ export default function UploadDropzone({ label, subtitle, icon = "upload", onFil
       <div className="flex flex-col items-center gap-4 pt-2">
         <div className="w-14 h-14 rounded-full flex items-center justify-center bg-gray-100/80">
           {icon === "upload" ? (
-            <svg className="w-7 h-7 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-            </svg>
+            <img src="/upload_icon.svg" alt="Upload" className="w-7 h-7" />
           ) : (
-            <svg className="w-7 h-7 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-            </svg>
+            <img src="/plus_icon.svg" alt="Plus" className="w-7 h-7" />
           )}
         </div>
 

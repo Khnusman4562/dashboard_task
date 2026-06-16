@@ -5,9 +5,12 @@ export default function DonutChart({ total, processed, pending }) {
   const stroke = 18; // Thicker ring
   const normalizedR = radius - stroke / 2;
   const circumference = 2 * Math.PI * normalizedR;
-  const processedPct = processed / total;
+  
+  // Safety check for total being 0 or NaN
+  const safeTotal = total > 0 ? total : 0;
+  const processedPct = safeTotal > 0 ? (processed / safeTotal) : 0;
   const processedDash = processedPct * circumference;
-  const gap = 2.5;
+  const gap = safeTotal > 0 ? 2.5 : 0;
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -26,8 +29,8 @@ export default function DonutChart({ total, processed, pending }) {
             fill="none"
             stroke="#c0392b"
             strokeWidth={stroke}
-            strokeDasharray={`${circumference - processedDash - gap} ${processedDash + gap}`}
-            strokeDashoffset={-(processedDash + gap / 2)}
+            strokeDasharray={safeTotal > 0 ? `${circumference - processedDash - gap} ${processedDash + gap}` : "0 1000"}
+            strokeDashoffset={safeTotal > 0 ? (-(processedDash + gap / 2)) : 0}
             strokeLinecap="round"
           />
           {/* Processed arc */}
@@ -36,13 +39,13 @@ export default function DonutChart({ total, processed, pending }) {
             fill="none"
             stroke="#7b2d26"
             strokeWidth={stroke}
-            strokeDasharray={`${processedDash - gap / 2} ${circumference - processedDash + gap / 2}`}
+            strokeDasharray={safeTotal > 0 ? `${processedDash - gap / 2} ${circumference - processedDash + gap / 2}` : "0 1000"}
             strokeLinecap="round"
           />
         </svg>
         {/* Center text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-2xl font-bold text-gray-900 leading-none">{total.toLocaleString()}</span>
+          <span className="text-2xl font-bold text-gray-900 leading-none">{(safeTotal || 0).toLocaleString()}</span>
           <span className="text-[9px] font-bold text-gray-400 uppercase tracking-[0.15em] mt-1.5">Total Rows</span>
         </div>
       </div>

@@ -14,6 +14,7 @@ export default function Home() {
     loading,
     handlePrimarySelect,
     handleSecondarySelect,
+    handleCompare,
   } = useUpload();
 
   return (
@@ -32,6 +33,7 @@ export default function Home() {
             secondaryFile={secondaryFile}
             onPrimarySelect={handlePrimarySelect}
             onSecondarySelect={handleSecondarySelect}
+            onCompare={handleCompare}
           />
         </div>
         <div className="lg:col-span-1">
