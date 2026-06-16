@@ -183,9 +183,6 @@ export default function DataInsightsTable({ data }) {
                     {row.amount}
                   </td>
                   <td className="px-8 py-5 text-[13px] font-bold text-gray-700">{row.ifsc}</td>
-                  <td className="px-8 py-5 text-gray-300 text-center">
-                    <button className="hover:text-gray-600 font-bold transition-colors">•••</button>
-                  </td>
                 </tr>
               ))
             )}
