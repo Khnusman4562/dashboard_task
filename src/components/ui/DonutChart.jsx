@@ -47,7 +47,7 @@ export default function DonutChart({ total, processed, pending }) {
         {/* Center text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <span className="text-2xl font-bold text-gray-900 leading-none">{(safeTotal || 0).toLocaleString()}</span>
-          <span className="text-[9px] font-bold text-gray-400 uppercase tracking-[0.15em] mt-1.5">Total Rows</span>
+          <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.15em] mt-1.5">Total Rows</span>
         </div>
       </div>
     </div>

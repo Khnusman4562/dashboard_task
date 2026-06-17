@@ -9,9 +9,9 @@ export default function DataImportHub({ primaryFile, secondaryFile, onPrimarySel
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
         <div className="flex items-center gap-2.5">
           <div className="p-2">
-            <img src="/file_icon.svg" alt="Data Import Hub" className="w-4 h-4" />
+            <img src="/file_icon.svg" alt="Data Import Hub" className="w-[15px] h-[19px]" />
           </div>
-          <h2 className="text-base font-bold text-gray-900 tracking-tight">Data Import Hub</h2>
+          <h2 className="text-[18px] font-semibold text-[#191C1E] tracking-tight">Data Import Hub</h2>
         </div>
         <div className="flex flex-wrap items-center gap-3">
           <button 
@@ -21,7 +21,7 @@ export default function DataImportHub({ primaryFile, secondaryFile, onPrimarySel
           >
             Compare Files
           </button>
-          <span className="text-[10px] font-bold bg-blue-50 text-blue-600 px-3 py-1.5 rounded-full border border-blue-100 uppercase tracking-wider">
+          <span className="text-[10px] font-bold bg-[#004AC6]/5 text-[#004AC6] px-3 py-1.5 rounded-full  uppercase tracking-wider">
             CSV FORMATS ONLY
           </span>
         </div>

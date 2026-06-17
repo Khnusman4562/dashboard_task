@@ -20,8 +20,8 @@ export default function Navbar() {
           <div className="flex items-center gap-4 md:gap-8">
             <div className="flex items-center gap-2.5">
               <div className="flex flex-col">
-                <span className="text-base md:text-lg font-bold text-[#004AC6] leading-none tracking-tight">DataCentral</span>
-                <span className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-0.5">Enterprise Analytics</span>
+                <span className="text-[24px]  font-bold text-[#004AC6] leading-none tracking-tight">DataCentral</span>
+                <span className="text-[10px] md:text-[10px] font-medium tracking-[2px] text-gray-400 uppercase  mt-0.5">Enterprise Analytics</span>
               </div>
             </div>
 
@@ -31,9 +31,9 @@ export default function Navbar() {
                 <button
                   key={link.name}
                   onClick={() => setActiveTab(link.name)}
-                  className={`px-2.5 py-1.5 text-xs rounded-md transition-all duration-200 ${
+                  className={`px-2.5 py-1.5 text-[16px] rounded-md transition-all duration-200 ${
                     activeTab === link.name
-                      ? "text-indigo-600 font-bold underline underline-offset-8 decoration-2"
+                      ? "text-[#004AC6] font-bold underline underline-offset-8 decoration-[1.5px]"
                       : "text-gray-500 font-normal hover:text-gray-800"
                   }`}
                 >
@@ -54,23 +54,23 @@ export default function Navbar() {
               </div>
               <input
                 type="text"
-                placeholder="Search..."
-                className="w-58 pl-8 pr-3 py-2 bg-gray-50 border-none ring-2 rounded-2xl text-xs ring-transparent focus:ring-2 focus:ring-indigo-100 focus:w-58 transition-all outline-none"
+                placeholder="Search datasets..."
+                className="w-58 pl-8 pr-3 py-2 bg-[#F2F4F6] border-none ring-2 rounded-2xl text-xs ring-transparent focus:ring-2 focus:ring-indigo-100 focus:w-58 transition-all outline-none"
               />
             </div>
 
             {/* Notifications */}
             <div className="flex items-center border-l border-gray-100 pl-4 ml-2">
               <button className="relative p-1.5 text-gray-400 hover:text-gray-600 transition-colors">
-                <img src="/bell_icon.svg" alt="Notifications" className="w-5 h-5" />
-                <span className="absolute top-1.5 right-1.8 w-1.5 h-1.5 bg-indigo-500 border border-white rounded-full"></span>
+                <img src="/bell_icon.svg" alt="Notifications" className="w-[15px] h-[19.19px]" />
+                <span className="absolute top-1.5 right-1.8 w-1.5 h-1.5 bg-[#004AC6] border border-white rounded-full"></span>
               </button>
             </div>
 
             {/* User Profile */}
             <div className="flex items-center gap-3">
               
-              <div className="w-9 h-9 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden shadow-sm">
+              <div className="w-[36px] h-[36px] rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden shadow-sm">
                 <img 
                   src="/profile_icon.svg" 
                   alt="Alex Rivera" 

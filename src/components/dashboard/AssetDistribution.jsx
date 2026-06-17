@@ -9,9 +9,9 @@ export default function AssetDistribution({ total, processed, pending }) {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2.5">
           <div className="p-2 ">
-            <img src="/asset_icon.svg" alt="Asset Distribution" className="w-4 h-4" />
+            <img src="/asset_icon.svg" alt="Asset Distribution" className="w-[19px] h-[19px]" />
           </div>
-          <h2 className="text-base font-bold text-gray-900 tracking-tight">Asset Distribution</h2>
+          <h2 className="text-[18px] font-semibold text-gray-900 tracking-tight">Asset Distribution</h2>
         </div>
       </div>
 
@@ -24,17 +24,17 @@ export default function AssetDistribution({ total, processed, pending }) {
       <div className="grid grid-cols-2 gap-3 mt-auto w-full">
         <div className="bg-gray-50/50 p-4 rounded-2xl flex flex-col gap-1 items-center border border-transparent hover:border-indigo-100 transition-all">
           <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#4F46E5]" />
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Processed</span>
+            <span className="w-[8px] h-[8px] rounded-full bg-[#4F46E5]" />
+            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Processed</span>
           </div>
-          <p className="text-xl font-bold text-gray-900 tabular-nums">{processed.toLocaleString()}</p>
+          <p className="text-[20px] font-bold text-gray-900 tabular-nums">{processed.toLocaleString()}</p>
         </div>
         <div className="bg-gray-50/50 p-4 rounded-2xl flex flex-col gap-1 items-center border border-transparent hover:border-red-100 transition-all">
           <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#943700]" />
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Pending</span>
+            <span className="w-[8px] h-[8px] rounded-full bg-[#943700]" />
+            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Pending</span>
           </div>
-          <p className="text-xl font-bold text-gray-900 tabular-nums">{pending.toLocaleString()}</p>
+          <p className="text-[20px] font-bold text-gray-900 tabular-nums">{pending.toLocaleString()}</p>
         </div>
       </div>
     </div>

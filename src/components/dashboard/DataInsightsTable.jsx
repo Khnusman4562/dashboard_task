@@ -83,8 +83,8 @@ export default function DataInsightsTable({ data }) {
       <div className="px-3 md:px-8 py-4 md:py-6 border-b border-gray-100">
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6">
           <div>
-            <h2 className="text-lg font-bold text-gray-900 leading-tight">Data Insights</h2>
-            <p className="text-[13px] font-medium text-gray-400 mt-1">Recent file activity and processing statuses</p>
+            <h2 className="text-[18px] font-semibold text-[#191C1E] leading-tight">Data Insights</h2>
+            <p className="text-[14px] font-normal text-[#434655] mt-1">Recent file activity and processing statuses</p>
           </div>
           
           <div className="grid grid-cols-1 sm:flex sm:flex-wrap items-center gap-3 w-full xl:w-auto">
@@ -132,7 +132,7 @@ export default function DataInsightsTable({ data }) {
               <button 
                 onClick={handleExport}
                 disabled={filteredAndSorted.length === 0}
-                className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-white border border-[#C3C6D7] text-[13px] font-semibold text-[#2B2B2B] hover:bg-[#F8F9FC] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed flex-1 sm:flex-none"
+                className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-white border border-[#C3C6D7] text-[13px] font-semibold text-[#191C1E] hover:bg-[#F8F9FC] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed flex-1 sm:flex-none"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5m0 0l5-5m-5 5V3" />
@@ -148,7 +148,7 @@ export default function DataInsightsTable({ data }) {
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-gray-50/50">
+            <tr className="bg-[#F7F9FB]">
               <th className="px-8 py-5 text-[11px] font-bold text-gray-400 uppercase tracking-widest border-b border-gray-100">UTR Number</th>
               <th className="px-8 py-5 text-[11px] font-bold text-gray-400 uppercase tracking-widest border-b border-gray-100">Transaction Date</th>
               <th className="px-8 py-5 text-[11px] font-bold text-gray-400 uppercase tracking-widest border-b border-gray-100">File Source</th>
@@ -191,7 +191,7 @@ export default function DataInsightsTable({ data }) {
 
       {/* Footer */}
       <div className="px-3 md:px-8 py-4 md:py-5 border-t border-gray-100 flex items-center justify-end sm:justify-between bg-gray-50/30">
-        <span className="hidden sm:block text-[13px] font-medium text-gray-400 tracking-tight">
+        <span className="hidden sm:block text-[14px] font-normal text-[#434655] tracking-tight">
           Showing {paginated.length} out of {filteredAndSorted.length} results
         </span>
         <Pagination
