@@ -21,8 +21,8 @@ export default function Home() {
     <div className="flex flex-col gap-8">
       {/* Page Title */}
       <div className="flex flex-col pt-3">
-        <h1 className="text-2xl font-bold text-gray-900 tracking-tight leading-tight">System Overview</h1>
-        <p className="text-xs text-gray-500 font-normal mt-1">Monitor your enterprise data infrastructure health and asset distribution.</p>
+        <h1 className="text-[32px] font-bold text-[#191C1E] tracking-tight leading-tight">System Overview</h1>
+        <p className="text-[16px] text-[#434655] font-normal mt-1">Monitor your enterprise data infrastructure health and asset distribution.</p>
       </div>
 
       {/* Top Row — Import Hub + Asset Distribution */}
