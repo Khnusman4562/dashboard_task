@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm/5">
-      <div className="max-w-[1600px] mx-auto px-4 md:px-10">
+      <div className="px-4 md:px-10">
         <div className="flex items-center justify-between h-16">
           {/* Brand/Logo Section */}
           <div className="flex items-center gap-4 md:gap-8">
