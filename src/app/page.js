@@ -45,19 +45,27 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Loading indicator */}
-      {loading && (
-        <div className="flex items-center gap-2 text-[11px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-100 rounded-lg px-3 py-2 shadow-sm animate-pulse">
-          <svg className="w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
-          </svg>
-          PROCESSING DATASETS...
-        </div>
-      )}
+      {/* Main Content Area: Either Loader or Data Table */}
+      <div className="relative min-h-[400px]">
+        {loading ? (
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/50 backdrop-blur-[2px] rounded-[28px] z-10">
+            <div className="flex flex-col items-center gap-4">
+              <div className="relative w-12 h-12">
+                <div className="absolute inset-0 border-4 border-indigo-100 rounded-full"></div>
+                <div className="absolute inset-0 border-4 border-indigo-600 rounded-full border-t-transparent animate-spin"></div>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-sm font-bold text-indigo-700 tracking-widest uppercase">Processing Datasets</span>
+                <span className="text-[11px] font-medium text-gray-400 mt-1">Please wait while we sync your records...</span>
+              </div>
+            </div>
+          </div>
+        ) : null}
 
-      {/* Data Insights Table */}
-      <DataInsightsTable data={tableData} />
+        <div className={loading ? "opacity-20 pointer-events-none transition-opacity duration-300" : "transition-opacity duration-300"}>
+          <DataInsightsTable data={tableData} />
+        </div>
+      </div>
     </div>
   );
 }

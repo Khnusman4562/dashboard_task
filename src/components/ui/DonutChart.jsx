@@ -26,7 +26,7 @@ export default function DonutChart({ total, processed, pending }) {
           <circle
             cx="60" cy="60" r={normalizedR}
             fill="none"
-            stroke={safeTotal > 0 ? "#943700" : "transparent"}
+            stroke={safeTotal > 0 && pending > 0 ? "#943700" : "transparent"}
             strokeWidth={stroke}
             strokeDasharray={safeTotal > 0 ? `${Math.max(0, circumference - processedDash - gap)} ${circumference}` : "0 1000"}
             strokeDashoffset={safeTotal > 0 ? (-(processedDash + gap / 2)) : 0}
@@ -37,7 +37,7 @@ export default function DonutChart({ total, processed, pending }) {
           <circle
             cx="60" cy="60" r={normalizedR}
             fill="none"
-            stroke={safeTotal > 0 ? "#4F46E5" : "transparent"}
+            stroke={safeTotal > 0 && processed > 0 ? "#4F46E5" : "transparent"}
             strokeWidth={stroke}
             strokeDasharray={safeTotal > 0 ? `${Math.max(0, processedDash - gap / 2)} ${circumference}` : "0 1000"}
             strokeLinecap="round"
