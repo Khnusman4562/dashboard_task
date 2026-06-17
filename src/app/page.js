@@ -18,11 +18,11 @@ export default function Home() {
   } = useUpload();
 
   return (
-    <div className="flex flex-col gap-8 max-w-[1600px] mx-auto px-1 md:px-6">
+    <div className="flex flex-col gap-8">
       {/* Page Title */}
       <div className="flex flex-col pt-3">
         <h1 className="text-2xl font-bold text-gray-900 tracking-tight leading-tight">System Overview</h1>
-        <p className="text-xs text-gray-500 font-medium mt-1">Monitor infrastructure health and asset distribution.</p>
+        <p className="text-xs text-gray-500 font-normal mt-1">Monitor your enterprise data infrastructure health and asset distribution.</p>
       </div>
 
       {/* Top Row — Import Hub + Asset Distribution */}
