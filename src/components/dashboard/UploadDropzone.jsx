@@ -24,10 +24,11 @@ export default function UploadDropzone({ label, subtitle, icon = "upload", onFil
       onDragLeave={() => setDragging(false)}
       onDrop={handleDrop}
       className={`flex-1 border-2 border-dashed rounded-[24px] p-6 flex flex-col items-center justify-between transition-all min-h-[360px] ${
-  dragging
-    ? "border-indigo-400 bg-indigo-50/50"
-    : "border-[#C3C6D7] bg-gray-50/20 hover:border-[#B5B9CC]"
-}`}
+        dragging
+          ? "border-indigo-400 bg-indigo-50/50"
+          : "border-[#C3C6D7] hover:border-[#B5B9CC]"
+      }`}
+      style={!dragging ? { backgroundColor: '#F7F9FB' } : {}}
     >
       <input
         ref={inputRef}
@@ -62,8 +63,8 @@ export default function UploadDropzone({ label, subtitle, icon = "upload", onFil
         onClick={() => inputRef.current?.click()}
         className={`w-full py-2.5 rounded-xl text-[13px] font-bold transition-all ${
           file
-            ? "bg-white border border-gray-900 text-gray-900 hover:bg-gray-50 shadow-sm"
-            : "bg-blue-50 text-blue-600 hover:bg-blue-100"
+            ? "bg-white border border-[#C3C6D7] text-gray-900 hover:bg-white hover:border hover:border-gray-400"
+            : "bg-[#004AC6]/5 text-[#004AC6] hover:bg-white hover:border border-[#6f9cea]"
         }`}
       >
         {file ? "Replace File" : "Select File"}

@@ -165,7 +165,6 @@ export default function DataInsightsTable({ data }) {
                 <tr key={i} className="hover:bg-gray-50/50 transition-colors">
                   <td className="px-8 py-5">
                     <div className="flex items-center gap-3">
-                      <FileIcon source={row.source} />
                       <span className="text-[13px] font-bold text-gray-800">{row.utr}</span>
                     </div>
                   </td>
